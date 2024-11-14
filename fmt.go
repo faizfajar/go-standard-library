@@ -8,5 +8,5 @@ func main() {
 
 	fmt.Println("Hello '", firstName, lastName, "'")
 
-	fmt.Printf("Hello '%s %s'\n", firstName, lastName)
+	fmt.Printf("Hello '%s %s %s'\n", firstName, lastName)
 }

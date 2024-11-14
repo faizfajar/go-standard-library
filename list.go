@@ -8,9 +8,9 @@ import (
 func main() {
 	var data *list.List = list.New()
 
-	data.PushBack("Eko")
-	data.PushBack("Kurniawan")
-	data.PushBack("Khannedy")
+	data.PushBack("Faiz")
+	data.PushBack("Fajar")
+	data.PushBack("Apprianda")
 
 	var head *list.Element = data.Front()
 	fmt.Println(head.Value) // eko

@@ -25,7 +25,7 @@ func GetById(id string) error {
 }
 
 func main() {
-	err := GetById("eko")
+	err := GetById("")
 	if err != nil {
 		if errors.Is(err, ValidationError) {
 			fmt.Println("validation error")

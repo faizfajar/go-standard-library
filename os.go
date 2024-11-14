@@ -12,8 +12,11 @@ func main() {
 	}
 
 	hostname, err := os.Hostname()
+	test, err := os.Getwd()
+
 	if err == nil {
 		fmt.Println(hostname)
+		fmt.Println(test)
 	} else {
 		fmt.Println("Error", err.Error())
 	}

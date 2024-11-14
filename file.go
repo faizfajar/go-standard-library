@@ -2,12 +2,13 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"io"
 	"os"
 )
 
 func createNewFile(name string, message string) error {
-	file, err := os.OpenFile(name, os.O_CREATE|os.O_WRONLY, 0666)
+	file, err := os.OpenFile(name, os.O_CREATE|os.O_WRONLY, 666)
 	if err != nil {
 		return err
 	}
@@ -17,7 +18,7 @@ func createNewFile(name string, message string) error {
 }
 
 func addToFile(name string, message string) error {
-	file, err := os.OpenFile(name, os.O_RDWR|os.O_APPEND, 0666)
+	file, err := os.OpenFile(name, os.O_RDWR|os.O_APPEND, 666)
 	if err != nil {
 		return err
 	}
@@ -27,7 +28,7 @@ func addToFile(name string, message string) error {
 }
 
 func readFile(name string) (string, error) {
-	file, err := os.OpenFile(name, os.O_RDONLY, 0666)
+	file, err := os.OpenFile(name, os.O_RDONLY, 666)
 	if err != nil {
 		return "", err
 	}
@@ -41,6 +42,7 @@ func readFile(name string) (string, error) {
 			break
 		}
 		message += string(line) + "\n"
+		fmt.Println(message)
 	}
 	return message, nil
 }
@@ -48,8 +50,8 @@ func readFile(name string) (string, error) {
 func main() {
 	// createNewFile("sample.log", "this is sample log")
 
-	//result, _ := readFile("sample.log")
-	//fmt.Println(result)
+	result, _ := readFile("sample.log")
+	fmt.Println(result)
 
-	addToFile("sample.log", "\nthis is add message")
+	// addToFile("sample.log", "\nthis is add message")
 }

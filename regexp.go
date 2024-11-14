@@ -8,6 +8,10 @@ import (
 func main() {
 	var regex *regexp.Regexp = regexp.MustCompile(`e([a-z])o`)
 
+	// test := "dkaskdska \n"
+	// a := regexp.MustCompile("\n", test)
+
+	// fmt.println(a)
 	fmt.Println(regex.MatchString("eko"))
 	fmt.Println(regex.MatchString("edo"))
 	fmt.Println(regex.MatchString("eKo"))

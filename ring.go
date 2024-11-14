@@ -3,14 +3,20 @@ package main
 import (
 	"container/ring"
 	"fmt"
+	"reflect"
 	"strconv"
 )
 
 func main() {
 	var data *ring.Ring = ring.New(5)
 
-	for i := 0; i < data.Len(); i++ {
-		data.Value = "Value " + strconv.Itoa(i)
+	for i := 1; i <= data.Len(); i++ {
+		if i == 5 {
+			data.Value = i
+		} else {
+			data.Value = "Value " + strconv.Itoa(i)
+		}
+
 		data = data.Next()
 	}
 
@@ -29,6 +35,9 @@ func main() {
 	//data.Value = "Value 5"
 
 	data.Do(func(value any) {
-		fmt.Println(value)
+		fmt.Println(reflect.TypeOf(value))
+		if value != nil {
+			fmt.Println(value)
+		}
 	})
 }

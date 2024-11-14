@@ -28,4 +28,6 @@ func main() {
 	fmt.Println(valueTime.Month())
 	fmt.Println(valueTime.Day())
 	fmt.Println(valueTime.Hour())
+
+	fmt.Println()
 }
